@@ -3,11 +3,10 @@ import { LayoutService } from 'angular-admin-lte';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  public isCustomLayout: boolean;
+  public customLayout: boolean;
 
   constructor(
     private layoutService: LayoutService
@@ -15,7 +14,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.layoutService.isCustomLayout.subscribe((value: boolean) => {
-      this.isCustomLayout = value;
+      this.customLayout = value;
     });
   }
 }

@@ -1,31 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LayoutModule } from 'angular-admin-lte';
-import { AuthModule } from './auth/auth.module';
-import { HomeModule } from './home/home.module';
+import { adminLteConf } from './admin-lte.conf';
 
-export var adminLteConf = {
-  skin: 'blue',
-  sidebarLeftMenu: [
-    {label: 'Start', route: '/', iconClasses: 'fa fa-th'},
-  ]
-};
+import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+
+import { LayoutModule } from 'angular-admin-lte';
+
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+
+import { LoadingPageModule, MaterialBarModule } from 'angular-loading-page';
+
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CoreModule,
     LayoutModule.forRoot(adminLteConf),
-    AuthModule,
-    HomeModule
+    LoadingPageModule, MaterialBarModule
   ],
-  providers: [],
+  declarations: [
+    AppComponent,
+    HomeComponent
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
