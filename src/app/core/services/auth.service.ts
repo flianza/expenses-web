@@ -60,7 +60,7 @@ export class AuthService {
   }
 
   isAuthorized(): boolean {
-    return !!this.jwtService.getAuthToken();
+    return !!this.jwtService.getAuthToken() && !!this.jwtService.getRefreshToken();
   }
 
   private generateUser(decodedToken: DecodedAuthToken): User | null {
