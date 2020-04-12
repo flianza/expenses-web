@@ -28,7 +28,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap-css-only/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/admin-lte-css/dist/css/AdminLTE.css",
+              "node_modules/admin-lte-css/dist/css/skins/_all-skins.css"
             ],
             "scripts": []
           },
@@ -123,6 +127,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "expenses-web"
+    }
+  },
+  "defaultProject": "expenses-web",
+  "cli": {
+    "analytics": false
+  }
 }
