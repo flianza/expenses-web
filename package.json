@@ -1,37 +1,19 @@
 {
   "name": "expenses-web",
-  "version": "2.0.1",
-  "keywords": [
-    "angular",
-    "angular 2",
-    "angular 4",
-    "angular 5",
-    "angular 6",
-    "angular 7",
-    "typescript",
-    "admin-lte"
-  ],
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:lib": "ng build angular-admin-lte --prod",
-    "publish:lib": "npm publish dist/angular-admin-lte",
-    "build:demo": "ng build expenses-web --prod --base-href=/angular-admin-lte/",
     "gh-pages": "node ./scripts/gh-pages-multi/bin/gh-pages-multi.js deploy -s dist/expenses-web --dry-run --tmp-dir",
     "test": "ng test",
     "test:demo": "ng test expenses-web",
-    "test:lib": "ng test angular-admin-lte",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mledour/angular-admin-lte.git"
-  },
-  "author": {
-    "name": "Mik@",
-    "email": "michael.ledour@gmail.com"
+    "url": "git://github.com/flianza/expenses-web.git"
   },
   "license": "MIT",
   "private": false,
@@ -45,6 +27,7 @@
     "@angular/platform-browser": "^7.2.3",
     "@angular/platform-browser-dynamic": "^7.2.3",
     "@angular/router": "^7.2.3",
+    "@auth0/angular-jwt": "^4.0.0",
     "admin-lte-css": "^2.4.3",
     "angular-admin-lte": "^2.0.1",
     "angular-loading-page": "^0.6.0",
@@ -66,6 +49,7 @@
     "@types/node": "~10.12.20",
     "@types/prismjs": "^1.9.0",
     "codelyzer": "~4.5.0",
+    "import-sort-parser-typescript": "^6.0.0",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.0.0",
@@ -83,5 +67,12 @@
   },
   "resolutions": {
     "terser": "3.8.1"
+  },
+  "importSort": {
+    ".ts, .tsx": {
+      "parser": "typescript",
+      "style": "module",
+      "options": {}
+    }
   }
 }
