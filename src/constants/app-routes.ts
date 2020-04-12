@@ -1,3 +1,5 @@
 export const appRoutes = {
-  login: 'login'
+  login: 'login',
+  register: 'register',
+  logout: 'logout'
 };

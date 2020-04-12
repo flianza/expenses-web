@@ -30,7 +30,10 @@ const routes: Routes = [
     data: {
       customLayout: true
     }
-  },
+  }, {
+    path: 'logout',
+    loadChildren: './logout/logout.module#LogoutModule'
+  }
 ];
 
 @NgModule({

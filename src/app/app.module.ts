@@ -18,11 +18,12 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     CoreModule,
     LayoutModule.forRoot(adminLteConf),
-    LoadingPageModule, MaterialBarModule
+    LoadingPageModule,
+    MaterialBarModule
   ],
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   providers: [
     {

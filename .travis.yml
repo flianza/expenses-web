@@ -22,25 +22,9 @@ before_script:
 
 script:
   - ng lint expenses-web
-  - ng lint angular-admin-lte
   - ng test expenses-web --watch=false --browsers=ChromeHeadless --code-coverage
-  # - ng test angular-admin-lte --watch=false --browsers=ChromeHeadless
-  - ng build expenses-web --prod --base-href="/angular-admin-lte/$([ "$TRAVIS_PULL_REQUEST" != false ] && echo "pulls/$TRAVIS_PULL_REQUEST/" || echo "branches/$TRAVIS_BRANCH/")"
-  - ng build angular-admin-lte --prod
-  # - xvfb-run npm run e2e
+  - ng build expenses-web --prod
 
 after_success:
   - cat coverage/lcov.info | coveralls
   - bash scripts/gh-pages.sh $TMPDIR/gh-pages $TRAVIS_BUILD_DIR/dist/expenses-web
-
-before_deploy:
-  - cp README.md LICENSE dist/angular-admin-lte
-  - cd dist/angular-admin-lte
-
-deploy:
-  provider: npm
-  email: "michael.ledour@gmail.com"
-  api_key: $NPM_TOKEN
-  skip_cleanup: true
-  on:
-    tags: true

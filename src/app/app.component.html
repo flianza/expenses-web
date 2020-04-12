@@ -3,7 +3,7 @@
 </ng-container>
 <ng-template #noCustomLayout>
   <mk-layout-wrapper>
-    <mk-layout-header logoLink="/" [isSidebarRightToggle]="false">
+    <mk-layout-header logoLink="/">
       <mk-layout-header-logo><b>Ex</b>penses</mk-layout-header-logo>
       <mk-layout-header-logo-mini><b>Ex</b>p</mk-layout-header-logo-mini>
       <app-header-inner></app-header-inner>
@@ -11,6 +11,9 @@
     <mk-layout-sidebar-left>
       <app-sidebar-left-inner></app-sidebar-left-inner>
     </mk-layout-sidebar-left>
+    <mk-layout-sidebar-right>
+      test
+    </mk-layout-sidebar-right>
     <mk-layout-content>
       <div mk-layout-content-before-header>
         <div *mkLoadingPage="{checkPendingHttp: true, checkPendingRoute: true}">
