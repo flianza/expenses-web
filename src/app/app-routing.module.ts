@@ -7,32 +7,33 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-    data: {
-      title: 'Get Started'
-    },
     canActivate: [AuthGuard],
     canActivateChild: [AuthGuard],
     children: [
       {
         path: '',
         component: HomeComponent
+      },
+      {
+        path: 'accounts',
+        loadChildren: () => import('./accounts/accounts.module').then(m => m.AccountsModule)
       }
     ]
   }, {
     path: 'login',
-    loadChildren: './login/login.module#LoginModule',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
     data: {
       customLayout: true
     }
   }, {
     path: 'register',
-    loadChildren: './register/register.module#RegisterModule',
+    loadChildren: () => import('./register/register.module').then(m => m.RegisterModule),
     data: {
       customLayout: true
     }
   }, {
     path: 'logout',
-    loadChildren: './logout/logout.module#LogoutModule'
+    loadChildren: () => import('./logout/logout.module').then(m => m.LogoutModule)
   }
 ];
 

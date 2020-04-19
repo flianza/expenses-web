@@ -8,3 +8,7 @@
 .table-bordered > tfoot > tr > td {
   border-color: #eae3e3;
 }
+
+.ngx-datatable.material {
+  box-shadow: none;
+}
