@@ -4,3 +4,4 @@ export * from './auth-base.model';
 export * from './auth-success.model';
 export * from './user.model';
 export * from './refresh-token-response.model';
+export * from './api-response.model';

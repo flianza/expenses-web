@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { BoxModule } from 'angular-admin-lte';
 
+import { TableModule } from '../core/components/table/table.module';
 import { AccountsRoutingModule } from './accounts-routing.module';
-import { AssetAccountComponent } from './asset-account/asset-account.component';
+import { AssetAccountComponent } from './components/asset-account/asset-account.component';
 
 @NgModule({
   declarations: [AssetAccountComponent],
@@ -12,7 +12,7 @@ import { AssetAccountComponent } from './asset-account/asset-account.component';
     CommonModule,
     AccountsRoutingModule,
     BoxModule,
-    NgxDatatableModule
+    TableModule
   ]
 })
 export class AccountsModule { }
