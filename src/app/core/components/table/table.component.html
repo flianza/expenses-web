@@ -2,8 +2,10 @@
   class="material"
   [rows]="tableRows"
   [columns]="columns"
-  [columnMode]="ColumnMode.force"
   [loadingIndicator]="loadingIndicator"
   [headerHeight]="40"
   [rowHeight]="40"
+  [columnMode]="ColumnMode.force"
+  [selectionType]="SelectionType.single"
+  (select)="onSelect($event)"
 ></ngx-datatable>

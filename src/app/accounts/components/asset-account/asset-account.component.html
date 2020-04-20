@@ -1,3 +1,23 @@
-<mk-box header="Accounts" [isRemovable]="false" [isCollapsable]="false">
-  <app-table [rows$]="rows$" [columns]="columns"></app-table>
-</mk-box>
+<div class="col-md-6">
+  <div class="row">
+    <mk-box header="Accounts" [isRemovable]="false" [isCollapsable]="false">
+      <app-table [rows$]="rows$" [columns]="columns" (selected)="onAccountSelected($event)"></app-table>
+    </mk-box>
+  </div>
+  <div class="row">
+    <button mat-flat-button (click)="onClickNew()">New</button>
+    <button mat-flat-button (click)="onClickUpdate()">Update</button>
+    <button mat-flat-button (click)="onClickView()">View</button>
+  </div>
+</div>
+<div class="col-md-6">
+  <ng-container *ngIf="action == 'new'">
+    <app-asset-account-form></app-asset-account-form>
+  </ng-container>
+  <ng-container *ngIf="action == 'update'">
+    <app-asset-account-form></app-asset-account-form>
+  </ng-container>
+  <ng-container *ngIf="action == 'view'">
+    <app-asset-account-view></app-asset-account-view>
+  </ng-container>
+</div>

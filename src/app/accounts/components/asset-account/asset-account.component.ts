@@ -15,6 +15,8 @@ export class AssetAccountComponent implements OnInit {
 
   rows$: Observable<AssetAccount[]>;
   columns: any[];
+  selectedAccount?: AssetAccount
+  action: 'none' | 'new' | 'update' | 'view' = 'none';
 
   constructor(private readonly assetAccountService: AssetAccountService) { }
 
@@ -33,4 +35,19 @@ export class AssetAccountComponent implements OnInit {
     ];
   }
 
+  onAccountSelected(selectedAccount?: AssetAccount) {
+    this.selectedAccount = selectedAccount;
+  }
+
+  onClickNew() {
+    this.action = 'new';
+  }
+
+  onClickUpdate() {
+    this.action = 'update';
+  }
+
+  onClickView() {
+    this.action = 'view';
+  }
 }

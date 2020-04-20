@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AuthInterceptor } from './core/interceptors';
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -19,7 +20,8 @@ import { HomeComponent } from './home/home.component';
     CoreModule,
     LayoutModule.forRoot(adminLteConf),
     LoadingPageModule,
-    MaterialBarModule
+    MaterialBarModule,
+    BrowserAnimationsModule
   ],
   declarations: [
     AppComponent,
